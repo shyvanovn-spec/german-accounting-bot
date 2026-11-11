@@ -447,3 +447,16 @@ if __name__ == "__main__":
     threading.Thread(target=lambda: bot.infinity_polling(skip_pending=True), daemon=True).start()
     print("German Accounting Telegram bot started with SQLite WAL, DATEV Export & Async Gemini!")
     uvicorn.run(app, host="0.0.0.0", port=int(os.getenv("PORT", 10000)))
+import os
+from fastapi import FastAPI
+import uvicorn
+
+app = FastAPI()
+
+@app.get("/")
+def home():
+    return {"status": "Bot is running!"}
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
