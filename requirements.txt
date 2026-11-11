@@ -1,0 +1,6 @@
+pyTelegramBotAPI
+fastapi
+uvicorn
+pandas
+requests
+google-generativeai
